@@ -21,8 +21,8 @@ if [ ! -z "$INPUT_PREINSTALLPKGS" ]; then
 fi
 
 sudo --set-home -u builder bash -c '
-  git clone "https://aur.archlinux.org/${pkgname}.git"
-  cd "${pkgname}"
+  git clone "https://aur.archlinux.org/"$pkgname".git"
+  cd "$pkgname"
   makepkg -s
 '
 cd "./$pkgname" || exit 1
